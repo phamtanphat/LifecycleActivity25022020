@@ -8,51 +8,57 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity {
 
-    Button mBtnScreen1;
+    Button mBtnScreen2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Log.d("BBB","onCreate Screen1");
-        mBtnScreen1 = findViewById(R.id.buttonScreen1);
-
-        mBtnScreen1.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_main2);
+        mBtnScreen2 = findViewById(R.id.buttonScreen2);
+        mBtnScreen2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,Main2Activity.class);
-                startActivity(intent);
+                Intent a = new Intent(Main2Activity.this, Main3Activity.class);
+                startActivity(a);
             }
         });
+        Log.d("BBB","onCreate Screen2");
     }
+
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("BBB","onResume Screen1");
+        Log.d("BBB","onResume Screen2");
     }
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d("BBB","onStart Screen1");
+        Log.d("BBB","onStart Screen2");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("BBB","onPause Screen1");
+        Log.d("BBB","onPause Screen2");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d("BBB","onStop Screen1");
+        Log.d("BBB","onStop Screen2");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d("BBB","onRestart Screen1");
+        Log.d("BBB","onRestart Screen2");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("BBB","onDestroy Screen2");
     }
 }
